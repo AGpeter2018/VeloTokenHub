@@ -27,7 +27,7 @@ export const useWriteVelo = () => {
             const tx = await veloContract.requestToken(address, amount)
             toast.success(`Requested ${amount} tokens successfully!`)
             const receipt = await tx.wait()
-            console.log(receipt)
+            console.error(receipt)
             return receipt.status === 1
         } catch (error) {
           const decodedError = await errorDecoder.decode(error);
@@ -54,7 +54,7 @@ export const useWriteVelo = () => {
             const tx = await veloContract.transfer(amount, address)
             toast.success(`Requested ${amount} tokens successfully!`)
             const receipt = await tx.wait()
-            console.log(receipt)
+            console.error(receipt)
             return receipt.status === 1
         } catch (error) {
            const decodedError = await errorDecoder.decode(error);
@@ -82,7 +82,7 @@ export const useWriteVelo = () => {
             const tx = await veloContract.mint(amount, address)
             toast.success(`Requested ${amount} tokens successfully!`)
             const receipt = await tx.wait()
-            console.log(receipt)
+            console.error(receipt)
             return receipt.status === 1
         } catch (error) {
             const decodedError = await errorDecoder.decode(error);

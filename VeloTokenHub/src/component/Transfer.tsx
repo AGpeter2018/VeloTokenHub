@@ -46,14 +46,14 @@ const Transfer = () => {
     }
   };
   return (
-    <div className='mt-10 p-4 sm:p-5 bg-neutral-50 shadow-md rounded-lg'>
-        <h1 className='text-lg sm:text-xl md:text-2xl text-black mb-4 font-semibold'>Token Transfer</h1>
-        <div className='border border-gray-200 mb-4'></div>
-        <div>
+    <div className='p-6 sm:p-8 border border-white/10 rounded-2xl bg-slate-900/50 backdrop-blur-sm h-full transition-all duration-300 hover:bg-slate-800/50 flex flex-col'>
+        <h1 className='text-xl md:text-2xl text-white font-bold tracking-tight mb-5'>Token Transfer</h1>
+        <div className='border-b border-white/10 mb-4'></div>
+        <div className='flex-1 flex flex-col justify-center'>
             <form action="" onSubmit={handleTransfer}>
-               <input type="text" value={recipient} onChange={((e) => setRecipient(e.target.value))} placeholder='Recipient Address' className='w-full mt-3 p-2 sm:p-3 text-sm sm:text-base border border-gray-300 rounded hover:border-gray-400' />
-               <input type="number" value={amount} onChange={((e) => setAmount(e.target.value))} placeholder='Amount' className='w-full mt-3 p-2 sm:p-3 text-sm sm:text-base border border-gray-300 rounded hover:border-gray-400' />
-               <button type='submit' className="bg-blue-600 text-white text-sm sm:text-base md:text-lg mt-4 w-full px-6 py-2 sm:py-3 rounded hover:bg-blue-700 transition duration-300 cursor-pointer font-medium">
+               <input type="text" value={recipient} onChange={((e) => setRecipient(e.target.value))} placeholder='Recipient Address' className='w-full mb-3 p-3 sm:p-4 text-sm sm:text-base border border-white/10 bg-slate-800/50 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-slate-500 text-white transition-colors duration-300 outline-none' />
+               <input type="number" value={amount} onChange={((e) => setAmount(e.target.value))} placeholder='Amount' className='w-full mb-4 p-3 sm:p-4 text-sm sm:text-base border border-white/10 bg-slate-800/50 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-slate-500 text-white transition-colors duration-300 outline-none' />
+               <button type='submit' className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0">
                   Send Tokens
                 </button>
             </form>
