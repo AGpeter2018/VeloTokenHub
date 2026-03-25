@@ -8,18 +8,25 @@ export const useVeloContract = (withSigner = false) => {
   const { readOnlyProvider, signer } = useRunners();
 
   return useMemo(() => {
-    if (withSigner) {
-      if (!signer) return null;
-      return new Contract(
-        getAddress(import.meta.env.VITE_VELO_HUB_CONTRACT_ADDRESS),
-        VElO_TOkEN_ABI,
-        signer
-      );
+    const address = import.meta.env.VITE_VELO_HUB_CONTRACT_ADDRESS;
+    
+    if (!address) {
+      console.error("VITE_VELO_HUB_CONTRACT_ADDRESS is not defined in .env");
+      return null;
     }
-    return new Contract(
-      getAddress(import.meta.env.   VITE_VELO_HUB_CONTRACT_ADDRESS),
-      VElO_TOkEN_ABI,
-      readOnlyProvider
-    );
+
+    try {
+      const validatedAddress = getAddress(address.trim());
+      
+      if (withSigner) {
+        if (!signer) return null;
+        return new Contract(validatedAddress, VElO_TOkEN_ABI, signer);
+      }
+
+      return new Contract(validatedAddress, VElO_TOkEN_ABI, readOnlyProvider);
+    } catch (error) {
+      console.error("Invalid contract address format:", address);
+      return null;
+    }
   }, [readOnlyProvider, signer, withSigner]);
 };
