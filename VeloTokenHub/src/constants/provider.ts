@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from "ethers";
 
-export const jsonRpcProvider = new JsonRpcProvider(
-    import.meta.env.VITE_VELO_HUB_TESTNET_RPC_URL
-);
+const RPC_URL = import.meta.env.VITE_VELO_HUB_TESTNET_RPC_URL || "https://eth-sepolia.g.alchemy.com/v2/demo";
+
+export const jsonRpcProvider = new JsonRpcProvider(RPC_URL);
 

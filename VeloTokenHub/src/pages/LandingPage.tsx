@@ -38,8 +38,8 @@ const LandingPage = () => {
         className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto"
       >
         <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-blue-400 flex items-center gap-2">
-          <Layers className="w-8 h-8 text-indigo-400" />
-          VeloTokenHub
+          <Layers className="w-8 h-8 sm:w-8 sm:h-8 text-indigo-400" />
+          VeloHub
         </div>
         <button 
           onClick={() => navigate('/dashboard')}
@@ -50,7 +50,7 @@ const LandingPage = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center px-4 pt-32 pb-20 text-center max-w-5xl mx-auto">
+      <main className="relative z-10 flex flex-col items-center justify-center px-4 pt-10 pb-20 text-center max-w-5xl mx-auto">
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
