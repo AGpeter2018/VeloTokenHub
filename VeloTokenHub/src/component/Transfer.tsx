@@ -53,7 +53,7 @@ const Transfer = () => {
             <form action="" onSubmit={handleTransfer}>
                <input type="text" value={recipient} onChange={((e) => setRecipient(e.target.value))} placeholder='Recipient Address' className='w-full mb-3 p-3 sm:p-4 text-sm sm:text-base border border-white/10 bg-slate-800/50 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-slate-500 text-white transition-colors duration-300 outline-none' />
                <input type="number" value={amount} onChange={((e) => setAmount(e.target.value))} placeholder='Amount' className='w-full mb-4 p-3 sm:p-4 text-sm sm:text-base border border-white/10 bg-slate-800/50 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-slate-500 text-white transition-colors duration-300 outline-none' />
-               <button type='submit' className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0">
+               <button type='submit' className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
                   Send Tokens
                 </button>
             </form>

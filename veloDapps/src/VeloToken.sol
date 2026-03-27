@@ -7,11 +7,9 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract VeloToken is ERC20, Ownable {
 
-   mapping(address => uint256) public balances;
-
    mapping(address => uint256) public lastRequestTime;
 
-   uint256 public constant MAX_SUPPLY = 1_000_000 * 10**18; 
+   uint256 public constant MAX_SUPPLY = 10_000_000 * 10**18; 
 
    uint256 public constant USER_REQ_MAX_SUPPLY = 100_000 * 10**18; 
 
@@ -20,14 +18,12 @@ contract VeloToken is ERC20, Ownable {
    event tokenTransfer(address indexed from, address indexed to, uint256 value);
    
    constructor(address owner) ERC20("VeloToken", "VELO") Ownable(owner) {
-      _mint(owner, 500000 * 10 ** decimals());
+      _mint(owner, 5000000 * 10 ** decimals());
    }
 
-   function mint(address to, uint256 amount) external onlyOwner {
+   function mint(address to, uint256 amount) public onlyOwner {
 
       require(to != address(0), "address zero detected");
-
-      require(amount <= MAX_SUPPLY, "Max supply exceeded");
 
       require(totalSupply() + amount <= MAX_SUPPLY, "Total supply exceeded");
 
@@ -43,15 +39,15 @@ contract VeloToken is ERC20, Ownable {
 
       require(amount <= USER_REQ_MAX_SUPPLY, "User request exceeds max supply");
 
+      require(balanceOf(address(this)) >= amount, "Faucet empty - Admin must refill");
+
       require(totalSupply() + amount <= MAX_SUPPLY, "Total supply exceeded");
 
       lastRequestTime[to] = block.timestamp;
 
-      balances[to] += amount;
+      _transfer(address(this), to, amount);
 
-      _mint(to, amount);
-
-      emit tokenTransfer(address(0), to, amount);
+      emit tokenTransfer(address(this), to, amount);
 
    }
     

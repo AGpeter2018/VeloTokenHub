@@ -67,7 +67,7 @@ const Claim = () => {
               Next Claim in {countdown}
             </button>
           ) : (
-            <button onClick={handleClaim} className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0">
+            <button onClick={handleClaim} className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
               Request Tokens
             </button>
           )

@@ -10,11 +10,12 @@ contract CounterScript is Script {
     function setUp() public {}
 
     function run() public {
-        vm.startBroadcast();
 
-    //    uint256 initialSupply = 1000000 * 10 ** 18;
+        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
 
-        veloToken = new VeloToken(address(msg.sender));
+        vm.startBroadcast(deployerPrivateKey);
+
+       veloToken = new VeloToken(vm.addr(deployerPrivateKey));
 
         vm.stopBroadcast();
     }
