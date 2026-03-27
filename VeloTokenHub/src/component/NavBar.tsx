@@ -22,7 +22,7 @@ const NavBar = () => {
             </div>
             <button 
               onClick={handleConnectWllet} 
-              className="px-5 py-2 sm:px-6 sm:py-2.5 text-sm sm:text-base font-semibold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5 active:translate-y-0"
+              className="px-5 py-2 sm:px-6 sm:py-2.5 text-sm sm:text-base font-semibold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
               {address ? `${address.slice(0, 6)}...${address.slice(-4)}` : 'Connect Wallet'}
             </button>

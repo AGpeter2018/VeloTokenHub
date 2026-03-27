@@ -25,9 +25,6 @@ useEffect(() => {
 
     try {
       const ownerAddress = await Contract.owner();
-    
-      console.error("Contract Owner:", ownerAddress.toLowerCase());
-      console.error("Connected Wallet:", address.toLowerCase());
 
       const match = ownerAddress.toLowerCase() === address.toLowerCase();
       setOwner(match);
@@ -120,7 +117,7 @@ useEffect(() => {
                <input type="text" value={contractAddress} onChange={((e) => setContractAddress(e.target.value))} placeholder='Recipient Address' className='flex-1 p-3 sm:p-4 text-sm sm:text-base border border-white/10 bg-slate-800/50 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-slate-500 text-white transition-colors duration-300 outline-none' />
                <input type="number" value={amount} onChange={((e) => setAmount(e.target.value))}  placeholder='Amount' className='w-full sm:w-48 p-3 sm:p-4 text-sm sm:text-base border border-white/10 bg-slate-800/50 rounded-xl focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-slate-500 text-white transition-colors duration-300 outline-none' />
               </div>
-               <button type='submit' className="w-full sm:w-auto shrink-0 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-8 py-3.5 sm:py-4 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0">
+               <button type='submit' className="w-full sm:w-auto shrink-0 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-sm sm:text-base font-semibold px-8 py-3.5 sm:py-4 rounded-xl hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
                   Mint Tokens
                 </button>
             </form>

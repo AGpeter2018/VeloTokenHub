@@ -4,7 +4,7 @@ import { sepolia as rawSepolia, type AppKitNetwork } from "@reown/appkit/network
 
 
 // 1. Get projectId
-const projectId = import.meta.env.VITE_APPKIT_PROJECT_ID || import.meta.env.VITE_PROJECT_ID;
+const projectId = import.meta.env.VITE_APPKIT_PROJECT_ID;
 
 if (!projectId) {
   console.warn("VITE_APPKIT_PROJECT_ID is not defined. Wallet connections may fail.");
